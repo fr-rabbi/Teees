@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="F R TECH — personal portfolio and digital lab.">
+  <title>F R TECH — Digital Portfolio</title>
+  <style>
+    :root{--bg:#090b10;--panel:#11151e;--panel2:#151a24;--gold:#f4c66a;--gold2:#ffe3a1;--text:#f5f6fa;--muted:#a1a8b7;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#252015 0%,transparent 34%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(9,11,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:1.5px}.brand span{color:var(--gold)}.links{display:flex;gap:25px;color:var(--muted);font-size:.92rem}.links a:hover{color:var(--gold)}.menu{display:none;background:none;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:1.1rem}
+    .hero{min-height:78vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px;padding:72px 0}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #5a4928;background:rgba(244,198,106,.08);border-radius:999px;padding:7px 13px;color:var(--gold2);font-size:.8rem;letter-spacing:.5px}.dot{width:7px;height:7px;border-radius:50%;background:#83e6a1;box-shadow:0 0 12px #83e6a1}.hero h1{font-size:clamp(2.7rem,7vw,5.6rem);line-height:1.02;letter-spacing:-3px;margin:23px 0 20px}.hero h1 em{font-style:normal;color:var(--gold)}.lead{max-width:590px;color:var(--muted);font-size:1.08rem}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{border:1px solid var(--line);padding:12px 18px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:750;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17130b;border-color:transparent}.secondary{background:rgba(255,255,255,.03)}.secondary:hover{border-color:var(--gold)}.hero-card{position:relative;border:1px solid #55472d;background:linear-gradient(145deg,rgba(244,198,106,.12),rgba(255,255,255,.025) 50%),var(--panel);border-radius:28px;padding:27px;min-height:360px;overflow:hidden;box-shadow:0 30px 90px #0008}.hero-card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#f4c66a20;filter:blur(25px);right:-60px;top:-60px}.monogram{position:relative;display:grid;place-items:center;width:145px;height:145px;border:1px solid var(--gold);border-radius:32px;transform:rotate(-8deg);margin:25px auto 32px;background:linear-gradient(135deg,#282215,#10131a);box-shadow:0 0 50px #f4c66a1c}.monogram strong{font-size:2.8rem;letter-spacing:-4px;transform:rotate(8deg)}.monogram strong span{color:var(--gold)}.card-caption{text-align:center;color:var(--muted);font-size:.9rem}.status{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:17px;margin-top:25px;font-size:.85rem}.status b{color:var(--gold2)}
+    section{padding:65px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:27px}.kicker{color:var(--gold);font-size:.78rem;text-transform:uppercase;letter-spacing:2px;font-weight:800}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:8px 0 0;letter-spacing:-1px}.section-head p{color:var(--muted);max-width:420px;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile{border:1px solid var(--line);background:linear-gradient(145deg,#151a24,#0e1118);padding:23px;border-radius:19px;transition:transform .25s,border-color .25s}.tile:hover{transform:translateY(-6px);border-color:#8b713c}.iconbox{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:#f4c66a16;color:var(--gold);font-size:1.3rem}.tile h3{margin:18px 0 7px}.tile p{color:var(--muted);font-size:.93rem;margin:0}.project{min-height:195px;display:flex;flex-direction:column;justify-content:space-between}.project .tag{font-size:.75rem;color:var(--gold2);border:1px solid #5a4928;border-radius:99px;padding:4px 9px;align-self:flex-start}.project a{margin-top:18px;color:var(--gold);font-weight:750}.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center}.about-panel{padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--panel)}.about-panel h3{margin-top:0}.about-panel p{color:var(--muted)}.skills{display:flex;flex-wrap:wrap;gap:9px}.skill{border:1px solid var(--line);background:#ffffff06;border-radius:9px;padding:7px 11px;font-size:.84rem;color:#d9deea}.contact{border:1px solid #5b4a2b;border-radius:25px;padding:clamp(25px,5vw,48px);background:radial-gradient(ellipse at 100% 0%,#f4c66a19,transparent 45%),var(--panel);display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;margin:8px 0}.contact p{color:var(--muted);max-width:520px}.footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#202630;border:1px solid #5b4a2b;border-radius:12px;padding:12px 17px;box-shadow:0 10px 35px #0008;transition:.25s;z-index:30}.toast.show{opacity:1;transform:translate(-50%,0)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:55px 0;gap:30px;min-height:auto}.hero h1{letter-spacing:-2px}.hero-card{min-height:300px}.monogram{width:120px;height:120px}.links{display:none;position:absolute;top:70px;left:0;right:0;background:#0d1017;padding:18px 4%;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.links.open{display:flex}.menu{display:block}.grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.about{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}section{padding:48px 0}.status{font-size:.8rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">F R <span>TECH</span></a>
+      <nav class="links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#services">What I Do</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="reveal">
+        <div class="eyebrow"><span class="dot"></span> BUILDING IDEAS INTO DIGITAL REALITY</div>
+        <h1>Hey, I'm<br><em>F R TECH.</em></h1>
+        <p class="lead">A curious developer exploring code, mobile apps, and the future of technology. I turn small ideas into useful digital experiences.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore Projects <span>↗</span></a>
+          <a class="btn secondary" href="#contact">Let's Connect <span>→</span></a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <div class="monogram"><strong>F<span>R</span>.</strong></div>
+        <div class="card-caption">INDEPENDENT DEVELOPER · DIGITAL CREATOR</div>
+        <div class="status"><span>Current focus</span><b>Learn · Build · Improve</b></div>
+      </div>
+    </section>
+    <section class="wrap" id="services">
+      <div class="section-head reveal"><div><div class="kicker">Capabilities</div><h2>What I do</h2></div><p>Learning by building, experimenting, and making technology feel a little more useful.</p></div>
+      <div class="grid">
+        <article class="tile reveal"><div class="iconbox">⌘</div><h3>Web Development</h3><p>Clean, responsive websites with HTML, CSS, and JavaScript.</p></article>
+        <article class="tile reveal"><div class="iconbox">▣</div><h3>Android Apps</h3><p>Mobile-first app concepts and practical interfaces for Android.</p></article>
+        <article class="tile reveal"><div class="iconbox">✳</div><h3>AI & Experiments</h3><p>Exploring AI tools, automation, and new ideas through small projects.</p></article>
+      </div>
+    </section>
+    <section class="wrap" id="projects">
+      <div class="section-head reveal"><div><div class="kicker">Selected work</div><h2>Projects & experiments</h2></div><p>A few concepts from the F R TECH digital lab. Replace these demo cards with your real projects.</p></div>
+      <div class="grid">
+        <article class="tile project reveal"><span class="tag">Web · Demo</span><div><h3>Personal Portfolio</h3><p>A simple home for projects, skills, and a developer story.</p><a href="#home">View concept ↗</a></div></article>
+        <article class="tile project reveal"><span class="tag">Android · Concept</span><div><h3>F R GEN AI</h3><p>An experimental idea for a mobile-first AI chat experience.</p><a href="#contact">Discuss idea ↗</a></div></article>
+        <article class="tile project reveal"><span class="tag">Tools · Lab</span><div><h3>Python Lab</h3><p>Small scripts and learning projects built one step at a time.</p><a href="#about">Explore skills ↗</a></div></article>
+      </div>
+    </section>
+    <section class="wrap" id="about">
+      <div class="about">
+        <div class="reveal"><div class="kicker">A little about me</div><h2 style="font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;letter-spacing:-1px">Curiosity is my<br><span style="color:var(--gold)">starting point.</span></h2><p style="color:var(--muted)">I believe progress comes from staying curious, practicing consistently, and shipping small things that work.</p></div>
+        <div class="about-panel reveal"><h3>My current toolkit</h3><p>These are example skills for the demo. Update them to match what you know and what you're learning.</p><div class="skills"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Python</span><span class="skill">Sketchware Pro</span><span class="skill">Firebase</span><span class="skill">GitHub</span><span class="skill">Termux</span></div></div>
+      </div>
+    </section>
+    <section class="wrap" id="contact">
+      <div class="contact reveal"><div><div class="kicker">Have an idea?</div><h2>Let's build something<br>worth sharing.</h2><p>Have a project, collaboration, or just want to say hello? Copy the demo contact message and replace it with your preferred contact details.</p></div><div class="actions"><button class="btn primary" id="contactBtn">Say Hello <span>↗</span></button><button class="btn secondary" id="copyBtn">Copy Contact Text</button></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> F R TECH. Built with curiosity.</span><a href="#home">Back to top ↑</a></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const opened = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(opened));
+      menuBtn.textContent = opened ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message; toast.classList.add('show');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+    }
+    document.getElementById('contactBtn').addEventListener('click', () => showToast('Demo contact button works! Add your real email or social link here.'));
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const text = 'Hello F R TECH! I would like to discuss a project.';
+      try { await navigator.clipboard.writeText(text); showToast('Contact message copied!'); }
+      catch (e) { showToast(text); }
+    });
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
